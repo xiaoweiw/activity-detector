@@ -120,7 +120,7 @@ void* VideoDataLayerPrefetch(void* layer_pointer) {
     }
 
     if (layer->phase_ == Caffe::TEST){
-    	CHECK(read_status) << "Testing must not miss any example";
+    	//CHECK(read_status) << "Testing must not miss any example";
     }
 
     if (!read_status) {

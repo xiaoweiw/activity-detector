@@ -49,6 +49,9 @@ int feature_extraction_pipeline(int argc, char** argv) {
   uint num_mini_batches = atoi(argv[5]);
   char* fn_feat = argv[6];
 
+  LOG(ERROR) << "batch size:" << batch_size;
+  LOG(ERROR) << "num mini batches:" << num_mini_batches;
+
   Caffe::set_phase(Caffe::TEST);
   if (device_id>=0){
 	  Caffe::set_mode(Caffe::GPU);
@@ -82,7 +85,7 @@ int feature_extraction_pipeline(int argc, char** argv) {
 
   vector<Blob<float>*> input_vec;
   int image_index = 0;
-
+  double total_elapsed = 0;
   for (int batch_index = 0; batch_index < num_mini_batches; ++batch_index) {
     
     struct timeval start, end;
@@ -92,8 +95,8 @@ int feature_extraction_pipeline(int argc, char** argv) {
     feature_extraction_net->Forward(input_vec);
     
     gettimeofday(&end, NULL);
-    double elapsed = ((end.tv_sec * 1000000 + end.tv_usec) - (start.tv_sec * 1000000 + start.tv_usec))/1000.0;
-    LOG(ERROR) << "Timer: " << elapsed;
+    double elapsed = ((end.tv_sec * 1000000 + end.tv_usec) - (start.tv_sec * 1000000 + start.tv_usec))/1000000.0;
+    total_elapsed += elapsed;
     
     list_prefix.clear();
     for (int n=0; n<batch_size; n++){
@@ -114,7 +117,7 @@ int feature_extraction_pipeline(int argc, char** argv) {
         for (int n = 0; n < num_features; ++n) {
           if (list_prefix.size()>n){
         	  string fn_feat = list_prefix[n] + string(".") + string(argv[k]);
-            std::cout << fn_feat<< std::endl;
+            //std::cout << fn_feat<< std::endl;
             //cout << feature_blob.get()
             save_blob_to_binary(feature_blob.get(), fn_feat, n);
           }
@@ -134,7 +137,16 @@ int feature_extraction_pipeline(int argc, char** argv) {
     */
   
   LOG(ERROR)<< "Successfully extracted " << image_index << " features!";
+
+  LOG(ERROR) << "Total time: " << total_elapsed;
   infile.close();
+
+  // write elapsed time to the time log
+  std::ofstream ft;
+  ft.open ("timelog");
+  ft << total_elapsed << std::endl;
+  //ft << "Writing this to a file.\n";
+  ft.close();
   return 0;
 }
 

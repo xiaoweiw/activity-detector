@@ -3,6 +3,7 @@ import numpy as np
 import time
 import pickle
 import h5py
+import sys
 from sklearn.decomposition import PCA
 
 def read_train():
@@ -22,7 +23,7 @@ def read_train():
         start = i*16+1
         f = open("/home/xiaoweiw/research/video/profiling/vfe-c3d/C3D/examples/c3d_feature_extraction/output/videodb/baseball/"+str(start)+".fc7-1","rb")
         #f = open("/home/xiaoweiw/research/video/profiling/vfe-c3d/C3D/examples/c3d_feature_extraction/output/videodb/pack/"+format(start,"06")+".fc7-1","rb")
-        s = struct.unpack("i"*5,f.read(4*5))
+        s = struct.unpack("i"*5,f.read(4*5)) # read binaries
         #print s
         m = s[0]*s[1]*s[2]*s[3]*s[4]
         tple = struct.unpack("f"*m, f.read(4*m))
@@ -47,14 +48,15 @@ def read_train():
     
     return samples
 
-def read_test(ntest):
-    ntest = 1500
+def read_test(ntest, feat_dir):
+    #ntest = 4240
     testdata = np.zeros((ntest,4096))
     for i in range(ntest):
         start = i+1
         #start = i*16+1
-        f = open("/home/xiaoweiw/research/video/profiling/vfe-c3d/C3D/examples/c3d_feature_extraction/output/videodb/pack/"+str(start)+".fc7-1","rb")
-        s = struct.unpack("i"*5,f.read(4*5))
+        f = open(feat_dir+str(start)+".fc7-1","rb")
+        #f = open("/home/xiaoweiw/research/video/profiling/vfe-c3d/C3D/examples/c3d_feature_extraction/output/videodb/wrest/"+str(start)+".fc7-1","rb")
+        s = struct.unpack("i"*5,f.read(4*5)) # read input binaries
         #print s
         m = s[0]*s[1]*s[2]*s[3]*s[4]
         tple = struct.unpack("f"*m, f.read(4*m))
@@ -65,7 +67,7 @@ def read_test(ntest):
         testdata[i,:] = darray
         #print darray.shape
     
-    print testdata
+    #print testdata
     return testdata
 
 def pca_train(data, ncomp):
@@ -85,27 +87,34 @@ def pca_project(data):
     """
     Use trained PCA to reduce dimension of input features 
     """
-    #start = time.time()
     #time.sleep(1)
     tpca = pickle.load( open( "pca_model.pkl", "rb" ) )
+    start = time.time()
     rdc = tpca.transform(data) # reduced features
-    #end = time.time()
-    #print (end - start)
-    print rdc.shape
-    print rdc
+    end = time.time()
+    print "timer: "+ str(end - start)
+    ft = open("timelog", "w")
+    ft.write(str(end-start)+"\n")
+    ft.close()
+    #print rdc.shape
+    #print rdc
     return rdc
     
 def createf5(c3d_ary):
     with h5py.File('videodb_c3d.h5', 'w') as hf:
-        gp = hf.create_group("pack")
+        gp = hf.create_group("test_video")
         ##print c3d_ary
         gp.create_dataset("c3d_features", data = c3d_ary)
 
 def main():
-    ntest = 4
+    ntest = int(sys.argv[1])
+    feat_dir = sys.argv[2]
+    #print ntest, feat_dir
     #train_data = read_train()
     #tpca = pca_train(train_data, 500)
-    test_data = read_test(ntest)
+    
+    
+    test_data = read_test(ntest, feat_dir)
     c3d_ary = pca_project(test_data)
     createf5(c3d_ary)
 

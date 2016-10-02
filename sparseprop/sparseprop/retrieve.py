@@ -67,6 +67,7 @@ def generate_candidate_proposals(video_info, proposal_sizes,
     return proposal_df
 
 def retrieve_proposals(video_info, model, feature_filename,
+                       init=None, dura=None,
                        feat_size=16, stride_intersection=0.1):
     """Retrieve proposals for a given video.
     
@@ -97,14 +98,14 @@ def retrieve_proposals(video_info, model, feature_filename,
     candidate_df = generate_candidate_proposals(video_info, model['durations'],
                                                 feat_size, stride_intersection)
     D = model['D']
-    print "model durations: "+ str(model["durations"])
-    print "feat size: "+ str(feat_size)
-    print "shape of D: "+str(D.shape)
+    #print "model durations: "+ str(model["durations"])
+    #print "feat size: "+ str(feat_size)
+    #print "shape of D: "+str(D.shape)
     params = model['params']
     feat_obj.open_instance()
-    feat_stack = feat_obj.read_feat(video_info['video-name'])
+    feat_stack = feat_obj.read_feat(video_info['video-name'], init,dura)
     feat_obj.close_instance()
-    print feat_stack.shape
+    #print feat_stack.shape
     n_feats = feat_stack.shape[0]
     candidate_df = candidate_df[
         (candidate_df['f-init'] + candidate_df['n-frames']) <= n_feats]

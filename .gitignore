@@ -1,0 +1,5 @@
+data/*
+C3D/examples/c3d_feature_extraction/output/videodb/*
+C3D/build/*
+*.cuo
+*.bin

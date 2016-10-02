@@ -8,7 +8,7 @@ layers {
     source: "prototxt/videodb_input.txt"
     use_image: true
     mean_file: "sport1m_train16_128_mean.binaryproto"
-    batch_size: 50
+    batch_size: 50 
     crop_size: 112
     mirror: false
     show_data: 0

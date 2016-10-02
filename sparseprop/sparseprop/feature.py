@@ -66,6 +66,8 @@ class C3D(object):
             raise ValueError('The object instance is not open.')
         s = self.t_stride
         t_size = self.t_size
+        print f_init, duration
+
         if f_init and duration:
             frames_of_interest = range(f_init, 
                                        f_init + duration - t_size + 1, s)

@@ -42,6 +42,9 @@ def input_parsing():
     p.add_argument('proposal_filename', type=str,
                    help=('CSV file containing the resulting proposals.'))
 
+    p.add_argument('--init', default=None, type=int)
+    p.add_argument('--dura', default=None, type=int)
+
     p.add_argument('--nms', default=0.65, type=float,
                    help=('Non-maxima supression threshold.'))
 
@@ -49,7 +52,7 @@ def input_parsing():
     return args
 
 def main(filename_lst, feature_filename, model_filename, 
-         proposal_filename, nms=0.65, verbose=True):
+         proposal_filename, init, dura, nms=0.65, verbose=True):
     """Main subroutine that controls the proposal extraction procedure 
     and save the proposals to disk. See `input_parsing` for info 
     about the inputs."""
@@ -82,9 +85,12 @@ def main(filename_lst, feature_filename, model_filename,
     proposal_lst = []
     for k, video_info in df.iterrows():
         start = time.time()
-        prop = retrieve_proposals(video_info, model, feature_filename)
+        prop = retrieve_proposals(video_info, model, feature_filename, init, dura)
         end = time.time()
         print "Elapsed time:", (end-start)
+        ft =open("timelog","w")
+        ft.write(str(end-start)+"\n")
+        ft.close()
         if nms:
             prop = wrapper_nms(prop)
         proposal_lst.append(prop)
