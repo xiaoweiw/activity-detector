@@ -2,8 +2,8 @@ num_frames=1000
 num_videos=100
 frame_res="171x128"
 ad_root="/home/xiaoweiw/research/video/profiling/acd/activity-detector/"  # root directory of activity detector
-video_dir="/home/lvnguyen/ActivityNet/Crawler/vids/"
-video_file_set="v_*.mp4"
+video_dir="${ad_root}/data/vids"
+video_file_set="v_83*.mp4"
 #video_file_set="v_b7*.mp4"
 
 cd ${video_dir}

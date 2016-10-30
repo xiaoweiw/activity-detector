@@ -4,7 +4,7 @@ num_videos=100
 caffe_dir="/home/xiaoweiw/tools/caffe"
 ad_root="/home/xiaoweiw/research/video/profiling/acd/activity-detector/"  # root directory of activity detector
 
-video_dir="/home/lvnguyen/ActivityNet/Crawler/vids/"
+video_dir="${ad_root}/data/vids"
 cd ${video_dir}
 #for input_video in v_b7*.mp4; do
 for input_video in v_83*.mp4; do
@@ -36,6 +36,7 @@ for input_video in v_83*.mp4; do
       fr_file="${frame_dir}/${fr_p}.jpg"
       fex="${fex} ${fr_file}"
     done
+    echo $fex
     $fex
 
     ## timing
@@ -43,7 +44,7 @@ for input_video in v_83*.mp4; do
     rm fex.timelog
     
     ## captioner
-    capt="${caffe_dir}/build/examples/cpp_cap/s2vt.bin ${fex_output}"
+    capt="${caffe_dir}/build/examples/cpp_s2vt/s2vt.bin ${fex_output}"
     $capt
     cat cap.timelog >> ${tmp_timelog}
     rm cap.timelog
@@ -51,7 +52,7 @@ for input_video in v_83*.mp4; do
   done # iterate action proposals
   
   # merge outputs of all proposals
-  python merge-time.py ${tmp_timelog} ${tmpout_timelog}
+  python ${ad_root}/utils/merge-time.py ${tmp_timelog} ${tmpout_timelog}
   cat ${tmpout_timelog} >> ${sum_timelog}
   rm ${tmp_timelog} ${tmpout_timelog}
 

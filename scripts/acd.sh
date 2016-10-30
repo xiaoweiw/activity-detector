@@ -1,7 +1,8 @@
 ## This script extracts c3d feature, performs PCA, and use features to generate hightes boundary proposals for actions in the video
 
 ad_root="/home/xiaoweiw/research/video/profiling/acd/activity-detector/"  # root directory of activity detector
-video_dir="/home/lvnguyen/ActivityNet/Crawler/vids/"
+video_dir="$ad_root/data/vids/"
+#video_dir="/home/lvnguyen/ActivityNet/Crawler/vids/"
 num_videos=100
 
 cd ${video_dir}
@@ -19,6 +20,7 @@ for input_video in v_83*.mp4; do
   rm -f videodb_input.txt
   rm -f videodb_output.txt
 
+  mkdir -p ${ad_root}/timing/full 
   sum_timelog="${ad_root}/timing/full/${video_name}.timelog"
 
   n_frames=$(ls -l ${frame_dir}/*.jpg | wc -l)
@@ -64,6 +66,7 @@ for input_video in v_83*.mp4; do
   $acd_infer
   cat timelog >> ${sum_timelog}
   rm timelog
+  mkdir -p ${ad_root}/output/act/full/
   mv data/videodb_proposals.csv ${ad_root}/output/act/full/${video_name}.out
 
 done

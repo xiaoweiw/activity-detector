@@ -28,6 +28,7 @@ const ::google::protobuf::internal::GeneratedMessageReflection*
 }  // namespace
 
 
+void protobuf_AssignDesc_caffe_2fproto_2fcaffe_5fpretty_5fprint_2eproto() GOOGLE_ATTRIBUTE_COLD;
 void protobuf_AssignDesc_caffe_2fproto_2fcaffe_5fpretty_5fprint_2eproto() {
   protobuf_AddDesc_caffe_2fproto_2fcaffe_5fpretty_5fprint_2eproto();
   const ::google::protobuf::FileDescriptor* file =
@@ -45,44 +46,55 @@ void protobuf_AssignDesc_caffe_2fproto_2fcaffe_5fpretty_5fprint_2eproto() {
   NetParameterPrettyPrint_reflection_ =
     ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
       NetParameterPrettyPrint_descriptor_,
-      NetParameterPrettyPrint::default_instance_,
+      NetParameterPrettyPrint::internal_default_instance(),
       NetParameterPrettyPrint_offsets_,
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(NetParameterPrettyPrint, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(NetParameterPrettyPrint, _has_bits_),
       -1,
       -1,
       sizeof(NetParameterPrettyPrint),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(NetParameterPrettyPrint, _internal_metadata_),
-      -1);
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(NetParameterPrettyPrint, _internal_metadata_));
 }
 
 namespace {
 
 GOOGLE_PROTOBUF_DECLARE_ONCE(protobuf_AssignDescriptors_once_);
-inline void protobuf_AssignDescriptorsOnce() {
+void protobuf_AssignDescriptorsOnce() {
   ::google::protobuf::GoogleOnceInit(&protobuf_AssignDescriptors_once_,
                  &protobuf_AssignDesc_caffe_2fproto_2fcaffe_5fpretty_5fprint_2eproto);
 }
 
+void protobuf_RegisterTypes(const ::std::string&) GOOGLE_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      NetParameterPrettyPrint_descriptor_, &NetParameterPrettyPrint::default_instance());
+      NetParameterPrettyPrint_descriptor_, NetParameterPrettyPrint::internal_default_instance());
 }
 
 }  // namespace
 
 void protobuf_ShutdownFile_caffe_2fproto_2fcaffe_5fpretty_5fprint_2eproto() {
-  delete NetParameterPrettyPrint::default_instance_;
+  NetParameterPrettyPrint_default_instance_.Shutdown();
   delete NetParameterPrettyPrint_reflection_;
 }
 
-void protobuf_AddDesc_caffe_2fproto_2fcaffe_5fpretty_5fprint_2eproto() {
-  static bool already_here = false;
-  if (already_here) return;
-  already_here = true;
+void protobuf_InitDefaults_caffe_2fproto_2fcaffe_5fpretty_5fprint_2eproto_impl() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
-  ::caffe::protobuf_AddDesc_caffe_2fproto_2fcaffe_2eproto();
+  ::caffe::protobuf_InitDefaults_caffe_2fproto_2fcaffe_2eproto();
+  ::google::protobuf::internal::GetEmptyString();
+  NetParameterPrettyPrint_default_instance_.DefaultConstruct();
+  NetParameterPrettyPrint_default_instance_.get_mutable()->InitAsDefaultInstance();
+}
+
+GOOGLE_PROTOBUF_DECLARE_ONCE(protobuf_InitDefaults_caffe_2fproto_2fcaffe_5fpretty_5fprint_2eproto_once_);
+void protobuf_InitDefaults_caffe_2fproto_2fcaffe_5fpretty_5fprint_2eproto() {
+  ::google::protobuf::GoogleOnceInit(&protobuf_InitDefaults_caffe_2fproto_2fcaffe_5fpretty_5fprint_2eproto_once_,
+                 &protobuf_InitDefaults_caffe_2fproto_2fcaffe_5fpretty_5fprint_2eproto_impl);
+}
+void protobuf_AddDesc_caffe_2fproto_2fcaffe_5fpretty_5fprint_2eproto_impl() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  protobuf_InitDefaults_caffe_2fproto_2fcaffe_5fpretty_5fprint_2eproto();
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
     "\n$caffe/proto/caffe_pretty_print.proto\022\005"
     "caffe\032\027caffe/proto/caffe.proto\"\217\001\n\027NetPa"
@@ -92,11 +104,15 @@ void protobuf_AddDesc_caffe_2fproto_2fcaffe_5fpretty_5fprint_2eproto() {
     "e.LayerParameter", 216);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "caffe/proto/caffe_pretty_print.proto", &protobuf_RegisterTypes);
-  NetParameterPrettyPrint::default_instance_ = new NetParameterPrettyPrint();
-  NetParameterPrettyPrint::default_instance_->InitAsDefaultInstance();
+  ::caffe::protobuf_AddDesc_caffe_2fproto_2fcaffe_2eproto();
   ::google::protobuf::internal::OnShutdown(&protobuf_ShutdownFile_caffe_2fproto_2fcaffe_5fpretty_5fprint_2eproto);
 }
 
+GOOGLE_PROTOBUF_DECLARE_ONCE(protobuf_AddDesc_caffe_2fproto_2fcaffe_5fpretty_5fprint_2eproto_once_);
+void protobuf_AddDesc_caffe_2fproto_2fcaffe_5fpretty_5fprint_2eproto() {
+  ::google::protobuf::GoogleOnceInit(&protobuf_AddDesc_caffe_2fproto_2fcaffe_5fpretty_5fprint_2eproto_once_,
+                 &protobuf_AddDesc_caffe_2fproto_2fcaffe_5fpretty_5fprint_2eproto_impl);
+}
 // Force AddDescriptors() to be called at static initialization time.
 struct StaticDescriptorInitializer_caffe_2fproto_2fcaffe_5fpretty_5fprint_2eproto {
   StaticDescriptorInitializer_caffe_2fproto_2fcaffe_5fpretty_5fprint_2eproto() {
@@ -106,9 +122,9 @@ struct StaticDescriptorInitializer_caffe_2fproto_2fcaffe_5fpretty_5fprint_2eprot
 
 namespace {
 
-static void MergeFromFail(int line) GOOGLE_ATTRIBUTE_COLD;
+static void MergeFromFail(int line) GOOGLE_ATTRIBUTE_COLD GOOGLE_ATTRIBUTE_NORETURN;
 static void MergeFromFail(int line) {
-  GOOGLE_CHECK(false) << __FILE__ << ":" << line;
+  ::google::protobuf::internal::MergeFromFail(__FILE__, line);
 }
 
 }  // namespace
@@ -126,6 +142,7 @@ const int NetParameterPrettyPrint::kLayersFieldNumber;
 
 NetParameterPrettyPrint::NetParameterPrettyPrint()
   : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (this != internal_default_instance()) protobuf_InitDefaults_caffe_2fproto_2fcaffe_5fpretty_5fprint_2eproto();
   SharedCtor();
   // @@protoc_insertion_point(constructor:caffe.NetParameterPrettyPrint)
 }
@@ -137,16 +154,14 @@ NetParameterPrettyPrint::NetParameterPrettyPrint(const NetParameterPrettyPrint& 
   : ::google::protobuf::Message(),
     _internal_metadata_(NULL) {
   SharedCtor();
-  MergeFrom(from);
+  UnsafeMergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:caffe.NetParameterPrettyPrint)
 }
 
 void NetParameterPrettyPrint::SharedCtor() {
-  ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
   name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   force_backward_ = false;
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
 NetParameterPrettyPrint::~NetParameterPrettyPrint() {
@@ -156,8 +171,6 @@ NetParameterPrettyPrint::~NetParameterPrettyPrint() {
 
 void NetParameterPrettyPrint::SharedDtor() {
   name_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (this != default_instance_) {
-  }
 }
 
 void NetParameterPrettyPrint::SetCachedSize(int size) const {
@@ -171,11 +184,11 @@ const ::google::protobuf::Descriptor* NetParameterPrettyPrint::descriptor() {
 }
 
 const NetParameterPrettyPrint& NetParameterPrettyPrint::default_instance() {
-  if (default_instance_ == NULL) protobuf_AddDesc_caffe_2fproto_2fcaffe_5fpretty_5fprint_2eproto();
-  return *default_instance_;
+  protobuf_InitDefaults_caffe_2fproto_2fcaffe_5fpretty_5fprint_2eproto();
+  return *internal_default_instance();
 }
 
-NetParameterPrettyPrint* NetParameterPrettyPrint::default_instance_ = NULL;
+::google::protobuf::internal::ExplicitlyConstructed<NetParameterPrettyPrint> NetParameterPrettyPrint_default_instance_;
 
 NetParameterPrettyPrint* NetParameterPrettyPrint::New(::google::protobuf::Arena* arena) const {
   NetParameterPrettyPrint* n = new NetParameterPrettyPrint;
@@ -186,6 +199,7 @@ NetParameterPrettyPrint* NetParameterPrettyPrint::New(::google::protobuf::Arena*
 }
 
 void NetParameterPrettyPrint::Clear() {
+// @@protoc_insertion_point(message_clear_start:caffe.NetParameterPrettyPrint)
   if (_has_bits_[0 / 32] & 3u) {
     if (has_name()) {
       name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
@@ -195,7 +209,7 @@ void NetParameterPrettyPrint::Clear() {
   input_.Clear();
   input_dim_.Clear();
   layers_.Clear();
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  _has_bits_.Clear();
   if (_internal_metadata_.have_unknown_fields()) {
     mutable_unknown_fields()->Clear();
   }
@@ -203,7 +217,7 @@ void NetParameterPrettyPrint::Clear() {
 
 bool NetParameterPrettyPrint::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:caffe.NetParameterPrettyPrint)
   for (;;) {
@@ -231,10 +245,10 @@ bool NetParameterPrettyPrint::MergePartialFromCodedStream(
       case 2: {
         if (tag == 16) {
          parse_force_backward:
+          set_has_force_backward();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
                  input, &force_backward_)));
-          set_has_force_backward();
         } else {
           goto handle_unusual;
         }
@@ -366,8 +380,9 @@ void NetParameterPrettyPrint::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:caffe.NetParameterPrettyPrint)
 }
 
-::google::protobuf::uint8* NetParameterPrettyPrint::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* NetParameterPrettyPrint::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
   // @@protoc_insertion_point(serialize_to_array_start:caffe.NetParameterPrettyPrint)
   // optional string name = 1;
   if (has_name()) {
@@ -404,8 +419,8 @@ void NetParameterPrettyPrint::SerializeWithCachedSizes(
   // repeated .caffe.LayerParameter layers = 5;
   for (unsigned int i = 0, n = this->layers_size(); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        5, this->layers(i), target);
+      InternalWriteMessageNoVirtualToArray(
+        5, this->layers(i), false, target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -416,8 +431,9 @@ void NetParameterPrettyPrint::SerializeWithCachedSizes(
   return target;
 }
 
-int NetParameterPrettyPrint::ByteSize() const {
-  int total_size = 0;
+size_t NetParameterPrettyPrint::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:caffe.NetParameterPrettyPrint)
+  size_t total_size = 0;
 
   if (_has_bits_[0 / 32] & 3u) {
     // optional string name = 1;
@@ -434,7 +450,8 @@ int NetParameterPrettyPrint::ByteSize() const {
 
   }
   // repeated string input = 3;
-  total_size += 1 * this->input_size();
+  total_size += 1 *
+      ::google::protobuf::internal::FromIntSize(this->input_size());
   for (int i = 0; i < this->input_size(); i++) {
     total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
       this->input(i));
@@ -442,20 +459,26 @@ int NetParameterPrettyPrint::ByteSize() const {
 
   // repeated int32 input_dim = 4;
   {
-    int data_size = 0;
-    for (int i = 0; i < this->input_dim_size(); i++) {
+    size_t data_size = 0;
+    unsigned int count = this->input_dim_size();
+    for (unsigned int i = 0; i < count; i++) {
       data_size += ::google::protobuf::internal::WireFormatLite::
         Int32Size(this->input_dim(i));
     }
-    total_size += 1 * this->input_dim_size() + data_size;
+    total_size += 1 *
+                  ::google::protobuf::internal::FromIntSize(this->input_dim_size());
+    total_size += data_size;
   }
 
   // repeated .caffe.LayerParameter layers = 5;
-  total_size += 1 * this->layers_size();
-  for (int i = 0; i < this->layers_size(); i++) {
-    total_size +=
-      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-        this->layers(i));
+  {
+    unsigned int count = this->layers_size();
+    total_size += 1UL * count;
+    for (unsigned int i = 0; i < count; i++) {
+      total_size +=
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->layers(i));
+    }
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -463,28 +486,41 @@ int NetParameterPrettyPrint::ByteSize() const {
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
   }
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = total_size;
+  _cached_size_ = cached_size;
   GOOGLE_SAFE_CONCURRENT_WRITES_END();
   return total_size;
 }
 
 void NetParameterPrettyPrint::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:caffe.NetParameterPrettyPrint)
   if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const NetParameterPrettyPrint* source = 
+  const NetParameterPrettyPrint* source =
       ::google::protobuf::internal::DynamicCastToGenerated<const NetParameterPrettyPrint>(
           &from);
   if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:caffe.NetParameterPrettyPrint)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-    MergeFrom(*source);
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:caffe.NetParameterPrettyPrint)
+    UnsafeMergeFrom(*source);
   }
 }
 
 void NetParameterPrettyPrint::MergeFrom(const NetParameterPrettyPrint& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  input_.MergeFrom(from.input_);
-  input_dim_.MergeFrom(from.input_dim_);
+// @@protoc_insertion_point(class_specific_merge_from_start:caffe.NetParameterPrettyPrint)
+  if (GOOGLE_PREDICT_TRUE(&from != this)) {
+    UnsafeMergeFrom(from);
+  } else {
+    MergeFromFail(__LINE__);
+  }
+}
+
+void NetParameterPrettyPrint::UnsafeMergeFrom(const NetParameterPrettyPrint& from) {
+  GOOGLE_DCHECK(&from != this);
+  input_.UnsafeMergeFrom(from.input_);
+  input_dim_.UnsafeMergeFrom(from.input_dim_);
   layers_.MergeFrom(from.layers_);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_name()) {
@@ -496,20 +532,23 @@ void NetParameterPrettyPrint::MergeFrom(const NetParameterPrettyPrint& from) {
     }
   }
   if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+    ::google::protobuf::UnknownFieldSet::MergeToInternalMetdata(
+      from.unknown_fields(), &_internal_metadata_);
   }
 }
 
 void NetParameterPrettyPrint::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:caffe.NetParameterPrettyPrint)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void NetParameterPrettyPrint::CopyFrom(const NetParameterPrettyPrint& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:caffe.NetParameterPrettyPrint)
   if (&from == this) return;
   Clear();
-  MergeFrom(from);
+  UnsafeMergeFrom(from);
 }
 
 bool NetParameterPrettyPrint::IsInitialized() const {
@@ -557,36 +596,37 @@ void NetParameterPrettyPrint::clear_name() {
   name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   clear_has_name();
 }
- const ::std::string& NetParameterPrettyPrint::name() const {
+const ::std::string& NetParameterPrettyPrint::name() const {
   // @@protoc_insertion_point(field_get:caffe.NetParameterPrettyPrint.name)
   return name_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
- void NetParameterPrettyPrint::set_name(const ::std::string& value) {
+void NetParameterPrettyPrint::set_name(const ::std::string& value) {
   set_has_name();
   name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:caffe.NetParameterPrettyPrint.name)
 }
- void NetParameterPrettyPrint::set_name(const char* value) {
+void NetParameterPrettyPrint::set_name(const char* value) {
   set_has_name();
   name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:caffe.NetParameterPrettyPrint.name)
 }
- void NetParameterPrettyPrint::set_name(const char* value, size_t size) {
+void NetParameterPrettyPrint::set_name(const char* value, size_t size) {
   set_has_name();
   name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:caffe.NetParameterPrettyPrint.name)
 }
- ::std::string* NetParameterPrettyPrint::mutable_name() {
+::std::string* NetParameterPrettyPrint::mutable_name() {
   set_has_name();
   // @@protoc_insertion_point(field_mutable:caffe.NetParameterPrettyPrint.name)
   return name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
- ::std::string* NetParameterPrettyPrint::release_name() {
+::std::string* NetParameterPrettyPrint::release_name() {
+  // @@protoc_insertion_point(field_release:caffe.NetParameterPrettyPrint.name)
   clear_has_name();
   return name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
- void NetParameterPrettyPrint::set_allocated_name(::std::string* name) {
+void NetParameterPrettyPrint::set_allocated_name(::std::string* name) {
   if (name != NULL) {
     set_has_name();
   } else {
@@ -610,11 +650,11 @@ void NetParameterPrettyPrint::clear_force_backward() {
   force_backward_ = false;
   clear_has_force_backward();
 }
- bool NetParameterPrettyPrint::force_backward() const {
+bool NetParameterPrettyPrint::force_backward() const {
   // @@protoc_insertion_point(field_get:caffe.NetParameterPrettyPrint.force_backward)
   return force_backward_;
 }
- void NetParameterPrettyPrint::set_force_backward(bool value) {
+void NetParameterPrettyPrint::set_force_backward(bool value) {
   set_has_force_backward();
   force_backward_ = value;
   // @@protoc_insertion_point(field_set:caffe.NetParameterPrettyPrint.force_backward)
@@ -627,48 +667,49 @@ int NetParameterPrettyPrint::input_size() const {
 void NetParameterPrettyPrint::clear_input() {
   input_.Clear();
 }
- const ::std::string& NetParameterPrettyPrint::input(int index) const {
+const ::std::string& NetParameterPrettyPrint::input(int index) const {
   // @@protoc_insertion_point(field_get:caffe.NetParameterPrettyPrint.input)
   return input_.Get(index);
 }
- ::std::string* NetParameterPrettyPrint::mutable_input(int index) {
+::std::string* NetParameterPrettyPrint::mutable_input(int index) {
   // @@protoc_insertion_point(field_mutable:caffe.NetParameterPrettyPrint.input)
   return input_.Mutable(index);
 }
- void NetParameterPrettyPrint::set_input(int index, const ::std::string& value) {
+void NetParameterPrettyPrint::set_input(int index, const ::std::string& value) {
   // @@protoc_insertion_point(field_set:caffe.NetParameterPrettyPrint.input)
   input_.Mutable(index)->assign(value);
 }
- void NetParameterPrettyPrint::set_input(int index, const char* value) {
+void NetParameterPrettyPrint::set_input(int index, const char* value) {
   input_.Mutable(index)->assign(value);
   // @@protoc_insertion_point(field_set_char:caffe.NetParameterPrettyPrint.input)
 }
- void NetParameterPrettyPrint::set_input(int index, const char* value, size_t size) {
+void NetParameterPrettyPrint::set_input(int index, const char* value, size_t size) {
   input_.Mutable(index)->assign(
     reinterpret_cast<const char*>(value), size);
   // @@protoc_insertion_point(field_set_pointer:caffe.NetParameterPrettyPrint.input)
 }
- ::std::string* NetParameterPrettyPrint::add_input() {
+::std::string* NetParameterPrettyPrint::add_input() {
+  // @@protoc_insertion_point(field_add_mutable:caffe.NetParameterPrettyPrint.input)
   return input_.Add();
 }
- void NetParameterPrettyPrint::add_input(const ::std::string& value) {
+void NetParameterPrettyPrint::add_input(const ::std::string& value) {
   input_.Add()->assign(value);
   // @@protoc_insertion_point(field_add:caffe.NetParameterPrettyPrint.input)
 }
- void NetParameterPrettyPrint::add_input(const char* value) {
+void NetParameterPrettyPrint::add_input(const char* value) {
   input_.Add()->assign(value);
   // @@protoc_insertion_point(field_add_char:caffe.NetParameterPrettyPrint.input)
 }
- void NetParameterPrettyPrint::add_input(const char* value, size_t size) {
+void NetParameterPrettyPrint::add_input(const char* value, size_t size) {
   input_.Add()->assign(reinterpret_cast<const char*>(value), size);
   // @@protoc_insertion_point(field_add_pointer:caffe.NetParameterPrettyPrint.input)
 }
- const ::google::protobuf::RepeatedPtrField< ::std::string>&
+const ::google::protobuf::RepeatedPtrField< ::std::string>&
 NetParameterPrettyPrint::input() const {
   // @@protoc_insertion_point(field_list:caffe.NetParameterPrettyPrint.input)
   return input_;
 }
- ::google::protobuf::RepeatedPtrField< ::std::string>*
+::google::protobuf::RepeatedPtrField< ::std::string>*
 NetParameterPrettyPrint::mutable_input() {
   // @@protoc_insertion_point(field_mutable_list:caffe.NetParameterPrettyPrint.input)
   return &input_;
@@ -681,24 +722,24 @@ int NetParameterPrettyPrint::input_dim_size() const {
 void NetParameterPrettyPrint::clear_input_dim() {
   input_dim_.Clear();
 }
- ::google::protobuf::int32 NetParameterPrettyPrint::input_dim(int index) const {
+::google::protobuf::int32 NetParameterPrettyPrint::input_dim(int index) const {
   // @@protoc_insertion_point(field_get:caffe.NetParameterPrettyPrint.input_dim)
   return input_dim_.Get(index);
 }
- void NetParameterPrettyPrint::set_input_dim(int index, ::google::protobuf::int32 value) {
+void NetParameterPrettyPrint::set_input_dim(int index, ::google::protobuf::int32 value) {
   input_dim_.Set(index, value);
   // @@protoc_insertion_point(field_set:caffe.NetParameterPrettyPrint.input_dim)
 }
- void NetParameterPrettyPrint::add_input_dim(::google::protobuf::int32 value) {
+void NetParameterPrettyPrint::add_input_dim(::google::protobuf::int32 value) {
   input_dim_.Add(value);
   // @@protoc_insertion_point(field_add:caffe.NetParameterPrettyPrint.input_dim)
 }
- const ::google::protobuf::RepeatedField< ::google::protobuf::int32 >&
+const ::google::protobuf::RepeatedField< ::google::protobuf::int32 >&
 NetParameterPrettyPrint::input_dim() const {
   // @@protoc_insertion_point(field_list:caffe.NetParameterPrettyPrint.input_dim)
   return input_dim_;
 }
- ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
+::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
 NetParameterPrettyPrint::mutable_input_dim() {
   // @@protoc_insertion_point(field_mutable_list:caffe.NetParameterPrettyPrint.input_dim)
   return &input_dim_;
@@ -734,6 +775,9 @@ NetParameterPrettyPrint::layers() const {
   return layers_;
 }
 
+inline const NetParameterPrettyPrint* NetParameterPrettyPrint::internal_default_instance() {
+  return &NetParameterPrettyPrint_default_instance_.get();
+}
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // @@protoc_insertion_point(namespace_scope)

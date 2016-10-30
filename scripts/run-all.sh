@@ -1,1 +1,1 @@
-./get-fix-length && ./acd.sh && ./fex-capt.sh
+./get-fix-length.sh && ./acd.sh && ./fex-capt.sh

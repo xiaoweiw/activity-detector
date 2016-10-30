@@ -1,0 +1,6 @@
+Some steps before running the scripts:
+1. Change directory to C3D, run "make" to make caffe.
+2. Copy the potential large files that do not exist in the repo.
+3. Install spams, following the document here: http://spams-devel.gforge.inria.fr/doc-python/html/doc_spams003.html
+4. Build caffe for fex and capt in the final stages
+
